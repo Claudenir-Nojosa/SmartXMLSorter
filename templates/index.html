@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload de Arquivos XML</title>
+</head>
+<body>
+    <h1>Upload de Arquivos XML</h1>
+
+    <!-- Exibe mensagens flash -->
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <form method="POST" enctype="multipart/form-data" action="{{ url_for('upload_files') }}">
+        <label for="xlsx_file">Planilha Excel:</label>
+        <input type="file" name="xlsx_file" required>
+        <br><br>
+        <label for="xml_files">Arquivos XML:</label>
+        <input type="file" name="xml_files" multiple required>
+        <br><br>
+        <button type="submit">Upload</button>
+    </form>
+</body>
+</html>

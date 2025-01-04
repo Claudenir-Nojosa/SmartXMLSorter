@@ -1,0 +1,12 @@
+# Aplicação
+app.py
+
+# Pastas
+XML's/
+XML's Organizados/
+
+#Json
+service_account.json
+
+#env
+.env
